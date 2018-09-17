@@ -57,6 +57,9 @@ public class SCM {
     public void req(Context context,String action,ScCallback callback) throws Exception{
         req(context,action,null,"",callback);
     }
+    public void req(Context context,String action,Bundle param,ScCallback callback) throws Exception{
+        req(context,action,param,"",callback);
+    }
     /**
      * 请求服务
      *
