@@ -1,6 +1,7 @@
 package com.zzy.core.serverCenter;
 
 import android.content.Context;
+import android.os.Bundle;
 
 import com.zzy.core.utils.ClassUtils;
 import com.zzy.core.utils.StringUtils;
@@ -54,17 +55,18 @@ public class SCM {
     }
 
     public void req(Context context,String action,ScCallback callback) throws Exception{
-        req(context,action,null,callback);
+        req(context,action,null,"",callback);
     }
     /**
      * 请求服务
      *
      * @param action   请求的服务名称
-     * @param param    携带参数，json格式的string
+     * @param param    携带参数
+     * @param tag       请求标签
      * @param callback  标准返回
      * @throws Exception
      */
-    public void req(Context context,String action,String param,ScCallback callback) throws Exception{
+    public void req(Context context, String action, Bundle param, String tag ,ScCallback callback) throws Exception{
         if(!isReady){
             throw new RuntimeException("SCM is not ready! pls wait!");
         }
@@ -72,7 +74,7 @@ public class SCM {
             throw new RuntimeException("SCM action not found! name:"+action);
         }
         ScAction scAction = actionMap.get(action);
-        scAction.invoke(context,param,callback);
+        scAction.invoke(context,param,tag,callback);
     }
 
     /**

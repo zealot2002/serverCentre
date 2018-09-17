@@ -1,6 +1,7 @@
 package com.zzy.core.serverCenter;
 
 import android.content.Context;
+import android.os.Bundle;
 
 /**
  * @author zzy
@@ -8,5 +9,5 @@ import android.content.Context;
  */
 
 public interface ScAction {
-    void invoke(Context context, String param, ScCallback callback);
+    void invoke(final Context context,Bundle param,final String tag,final ScCallback callback);
 }
