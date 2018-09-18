@@ -1,4 +1,4 @@
-package com.zzy.core.serverCenter;
+package com.zzy.sc.core.serverCenter;
 
 import android.content.Context;
 import android.os.Bundle;

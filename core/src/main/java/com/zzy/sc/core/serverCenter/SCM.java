@@ -1,10 +1,10 @@
-package com.zzy.core.serverCenter;
+package com.zzy.sc.core.serverCenter;
 
 import android.content.Context;
 import android.os.Bundle;
 
-import com.zzy.core.utils.ClassUtils;
-import com.zzy.core.utils.StringUtils;
+import com.zzy.sc.core.utils.ClassUtils;
+import com.zzy.sc.core.utils.StringUtils;
 
 import java.util.HashMap;
 import java.util.List;

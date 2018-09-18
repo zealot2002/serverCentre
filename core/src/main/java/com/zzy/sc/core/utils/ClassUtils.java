@@ -1,4 +1,4 @@
-package com.zzy.core.utils;
+package com.zzy.sc.core.utils;
 //
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by Fernflower decompiler)

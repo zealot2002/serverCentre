@@ -1,4 +1,4 @@
-package com.zzy.core.utils;
+package com.zzy.sc.core.utils;
 
 import java.util.HashMap;
 import java.util.Map;
