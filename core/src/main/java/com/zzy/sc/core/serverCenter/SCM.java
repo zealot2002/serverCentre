@@ -54,6 +54,10 @@ public class SCM {
         }
     }
 
+    public void req(Context context,String action) throws Exception{
+        req(context,action,null,"",null);
+    }
+
     public void req(Context context,String action,ScCallback callback) throws Exception{
         req(context,action,null,"",callback);
     }
