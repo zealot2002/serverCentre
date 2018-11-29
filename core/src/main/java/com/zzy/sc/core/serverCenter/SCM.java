@@ -31,6 +31,7 @@ public class SCM {
 
     private HashMap<String, ScAction> actionMap = new HashMap<>();
     private volatile boolean isReady;
+
 /******************************************************************************************************/
 
     /**
@@ -56,6 +57,9 @@ public class SCM {
 
     public void req(Context context,String action) throws Exception{
         req(context,action,null,"",null);
+    }
+    public void req(Context context,String action,Bundle param) throws Exception{
+        req(context,action,param,"",null);
     }
 
     public void req(Context context,String action,ScCallback callback) throws Exception{
