@@ -2,6 +2,7 @@ package com.zzy.sc.core.serverCenter;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.zzy.sc.core.utils.ClassUtils;
 import com.zzy.sc.core.utils.StringUtils;
@@ -39,6 +40,7 @@ public class SCM {
      * @param context
      */
     public void init(Context context){
+        Log.e(TAG,"init "+android.os.Process.myPid());
         try {
             List<String> classFileNames = ClassUtils.getFileNameByPackageName(context, SCACTION_ROOT_PAKCAGE);
             for (String className : classFileNames) {
@@ -78,6 +80,7 @@ public class SCM {
      * @throws Exception
      */
     public void req(Context context, String action, Bundle param, String tag ,ScCallback callback) throws Exception{
+        Log.e(TAG,"req "+android.os.Process.myPid());
         if(!isReady){
             throw new RuntimeException("SCM is not ready! pls wait!");
         }
