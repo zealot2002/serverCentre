@@ -50,10 +50,7 @@ public class GetGlobalConfigAction implements ScAction {
                     try {
                         JSONObject object = (JSONObject) data;
                         if(scCallback!=null)
-                            scCallback.onCallback(true, null, "");
-                        if(!object.toString().isEmpty()){
-                            SPHelper.save(SPConstants.GLOBAL_CONFIG,object.toString());
-                        }
+                            scCallback.onCallback(true, object.toString(), "");
                     } catch (Exception e) {
                         e.printStackTrace();
                         if(scCallback!=null)
@@ -85,7 +82,8 @@ public class GetGlobalConfigAction implements ScAction {
             });
 
 //使用服务2场景 获取全局配置
-    //module1获取 module2的数据
+//module1获取 module2的数据  module之间通过bundle传输数据，解耦
+//
       SCM.getInstance().req(application, ActionConstants.GET_GLOBAL_CONFIG_ACTIONnew ScCallback() {
                 @Override
                 public void onCallback(boolean b, Bundle bundle, String s) {
