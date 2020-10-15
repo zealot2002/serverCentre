@@ -49,8 +49,10 @@ public class GetGlobalConfigAction implements ScAction {
                 if (result == HConstant.SUCCESS) {
                     try {
                         JSONObject object = (JSONObject) data;
+                        Bundle bundle = new Bundle();
+                        bundle.putString(ParamConstants.OBJECT, object.toString());
                         if(scCallback!=null)
-                            scCallback.onCallback(true, object.toString(), "");
+                            scCallback.onCallback(true, bundle.toString(), "");
                     } catch (Exception e) {
                         e.printStackTrace();
                         if(scCallback!=null)
