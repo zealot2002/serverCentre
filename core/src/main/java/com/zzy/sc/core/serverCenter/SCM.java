@@ -92,6 +92,23 @@ public class SCM {
     }
 
     /**
+     * 取消服务
+     *
+     * @param action   请求的服务名称
+     * @throws Exception
+     */
+    public void cancel(String action) throws Exception{
+        if(!isReady){
+            throw new RuntimeException("SCM is not ready! pls wait!");
+        }
+        if(!actionMap.containsKey(action)){
+            throw new RuntimeException("SCM action not found! name:"+action);
+        }
+        ScAction scAction = actionMap.get(action);
+        scAction.cancel();
+    }
+
+    /**
      * 注册服务
      *
      * @param action

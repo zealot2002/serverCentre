@@ -10,4 +10,5 @@ import android.os.Bundle;
 
 public interface ScAction {
     void invoke(final Context context,Bundle param,final String tag,final ScCallback callback);
+    void cancel();
 }
